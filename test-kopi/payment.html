@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Payment</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <h1>Payment</h1>
+    
+    <div id="cart-summary">
+      <h2>Cart Summary</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Total</th>
+          </tr>
+        </thead>
+        <tbody id="cart-summary-body"></tbody>
+        <tfoot>
+          <tr>
+            <td colspan="3">Total:</td>
+            <td id="cart-summary-total"></td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    
+    <div id="payment-form">
+      <h2>Payment Information</h2>
+      <form>
+        <label for="name">Name on Card:</label>
+        <input type="text" id="name" name="name" required>
+        
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" name="card-number" required>
+        
+        <label for="expiration-date">Expiration Date:</label>
+        <input type="text" id="expiration-date" name="expiration-date" required>
+        
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" name="cvv" required>
+        
+        <button type="submit">Pay Now</button>
+      </form>
+    </div>
+    <script>
+      // Get cart items and total amount from localStorage
+      var cartItems = JSON.parse(localStorage.getItem("cartItems"));
+      var totalAmount = localStorage.getItem("totalAmount");
+      
+      // Populate cart summary table
+      var cartSummaryBody = document.getElementById("cart-summary-body");
+      var cartSummaryTotal = document.getElementById("cart-summary-total");
+      var cartSummaryHtml = "";
+      var cartTotal = 0;
+      for (var i = 0; i < cartItems.length; i++) {
+        var itemTotal = cartItems[i].price * cartItems[i].qty;
+        cartSummaryHtml += "<tr><td>" + cartItems[i].name + "</td><td>$" + cartItems[i].price.toFixed(2) + "</td><td>" + cartItems[i].qty + "</td><td>$" + itemTotal.toFixed(2) + "</td></tr>";
+        cartTotal += itemTotal;
+      }
+      cartSummaryBody.innerHTML = cartSummaryHtml;
+      cartSummaryTotal.innerHTML = "$" + cartTotal.toFixed(2);
+    </script>
+  </body>
+</html>
+

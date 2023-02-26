@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Webshop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Webshop</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Shop</a></li>
+        <li><a href="#">Cart</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="product-list">
+      <article class="product">
+  <div class="product-img">
+    <img src="https://www.avxperten.dk/billeder/barbermaskine-60-minutter-adler-3-big.jpg" alt="Barbermaskine">
+  </div>
+  <div class="product-info">
+    <h2>Barbermaskine</h2>
+    <p class="price">200 DKK</p>
+    <div class="quantity">
+      <label for="trimmer">Quantity:</label>
+      <input type="number" id="trimmer" name="trimmer" value="1" min="1">
+    </div>
+    <button class="add-to-cart" data-product-id="trimmer">Add to Cart</button>
+  </div>
+</article>
+      <article class="product">
+        <div class="product-img">
+          <img src="3615-0471-4.jpg" alt="Barbermaskine m batteri">
+        </div>
+        <div class="product-info">
+          <h2>Barbermaskine med batteri</h2>
+          <p class="price">350 DKK</p>
+          <div class="quantity">
+            <label for="trimmer-battery">Quantity:</label>
+            <input type="number" id="trimmer-battery" name="trimmer-battery" value="1" min="1">
+          </div>
+          <button class="add-to-cart" data-product-id="trimmer-battery">Add to Cart</button>
+        </div>
+      </article>
+      <article class="product">
+        <div class="product-img">
+          <img src="product_v1_x2.avif" alt="Hårklemme">
+        </div>
+        <div class="product-info">
+          <h2>Hårklemme</h2>
+          <p class="price">25 DKK</p>
+          <div class="quantity">
+            <label for="hair-clip">Quantity:</label>
+            <input type="number" id="hair-clip" name="hair-clip" value="1" min="1">
+          </div>
+          <button class="add-to-cart" data-product-id="hair-clip">Add to Cart</button>
+        </div>
+      </article>
+      <article class="product">
+        <div class="product-img">
+          <img src="331000949000_1.webp" alt="Hårklemme, stor">
+        </div>
+        <div class="product-info">
+          <h2>Hårklemme, stor</h2>
+          <p class="price">45 DKK</p>
+          <div class="quantity">
+            <label for="hair-clip-large">Quantity:</label>
+            <input type="number" id="hair-clip-large" name="hair-clip-large" value="1" min="1">
+			</div>
+			<button class="add-to-cart" data-product-id="hair-clip-large">Add to Cart</button>
+</div>
+</article>
+</section>
+<aside class="cart">
+  <h2>Cart</h2>
+  <ul class="cart-list"></ul>
+  <div class="cart-total-buttons">
+  <div class="cart-total">
+    <p>Total: <span class="total-price">0 DKK</span></p>
+    <button class="checkout">Checkout</button>
+    <button class="remove-all">Remove all items</button>
+  </div>
+</div>
+
+</aside>
+
+  </main>
+  <script src="script.js"></script>
+</body>
+</html> 

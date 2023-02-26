@@ -141,8 +141,8 @@ cursor: pointer;
 .cart {
   position: relative;
   top: -395px;
-  right:-380px;
-  width: 335px;
+  right:-360px;
+  width: 350px;
   height: 100%;
   background-color: #fff;
   transform: translateX(100%);
